@@ -1,0 +1,108 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpbrswkesy2pi"]
+
+[ext_resource type="Script" path="res://scripts/ConnectionsNode.gd" id="1_lpu4o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yba7"]
+size = Vector2(8, 8)
+
+[node name="ConnectionsNode" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpu4o")
+
+[node name="EastConnector" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(32, 0)
+collision_layer = 32
+collision_mask = 32
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="EastArea" type="CollisionShape2D" parent="EastConnector"]
+shape = SubResource("RectangleShape2D_3yba7")
+debug_color = Color(0.709804, 0.00392157, 0.94902, 0.419608)
+
+[node name="EastRaycast" type="RayCast2D" parent="EastConnector"]
+self_modulate = Color(0, 0.878431, 0.298039, 1)
+rotation = 4.71239
+enabled = false
+target_position = Vector2(0, 16)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="WestConnector" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(-32, 0)
+collision_layer = 32
+collision_mask = 32
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="WestArea" type="CollisionShape2D" parent="WestConnector"]
+shape = SubResource("RectangleShape2D_3yba7")
+debug_color = Color(0.709804, 0.00392157, 0.94902, 0.419608)
+
+[node name="WestRaycast" type="RayCast2D" parent="WestConnector"]
+self_modulate = Color(0, 0.878431, 0.298039, 1)
+rotation = 1.5708
+enabled = false
+target_position = Vector2(0, 16)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="NorthConnector" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(0, -32)
+collision_layer = 32
+collision_mask = 32
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="NorthArea" type="CollisionShape2D" parent="NorthConnector"]
+shape = SubResource("RectangleShape2D_3yba7")
+debug_color = Color(0.709804, 0.00392157, 0.94902, 0.419608)
+
+[node name="NorthRaycast" type="RayCast2D" parent="NorthConnector"]
+self_modulate = Color(0, 0.878431, 0.298039, 1)
+rotation = 3.14159
+enabled = false
+target_position = Vector2(0, 16)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="SouthConnector" type="Area2D" parent="."]
+z_index = 2
+position = Vector2(0, 32)
+collision_layer = 32
+collision_mask = 32
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="SouthArea" type="CollisionShape2D" parent="SouthConnector"]
+shape = SubResource("RectangleShape2D_3yba7")
+debug_color = Color(0.709804, 0.00392157, 0.94902, 0.419608)
+
+[node name="SouthRaycast" type="RayCast2D" parent="SouthConnector"]
+self_modulate = Color(0, 0.878431, 0.298039, 1)
+enabled = false
+target_position = Vector2(0, 16)
+collision_mask = 32
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false

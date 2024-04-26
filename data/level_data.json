@@ -1,0 +1,442 @@
+{
+	"level_1": {
+		"level_columns": 5,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#start",
+				"blank",
+				"corner_270_blue",
+				"line_0_blue",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"line_0_blue",
+				"corner_90_blue",
+				"blank",
+				"#end_90_blue"
+			],
+			"row4": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_2": {
+		"level_columns": 5,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"blank",
+				"line_90_red",
+				"corner_180_red",
+				"#wall"
+			],
+			"row3": [
+				"#start",
+				"corner_90_red",
+				"block",
+				"line_0_red",
+				"#end_90_red"
+			],
+			"row4": [
+				"#wall",
+				"block",
+				"corner_270_red",
+				"corner_0_red",
+				"#wall"
+			],
+			"row5": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_3": {
+		"level_columns": 5,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#end_0_green",
+				"#end_0_green",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"line_0_green",
+				"line_90_green",
+				"blank",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"block",
+				"block",
+				"corner_180_green",
+				"#wall"
+			],
+			"row4": [
+				"#wall",
+				"corner_0_green",
+				"corner_0_green",
+				"corner_90_green",
+				"#wall"
+			],
+			"row5": [
+				"#wall",
+				"corner_90_green",
+				"line_90_green",
+				"triple_180_green",
+				"#start"
+			],
+			"row6": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_4": {
+		"level_columns": 6,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#end_0_blue",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"corner_180_green",
+				"block",
+				"block",
+				"block",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"corner_90_blue",
+				"block",
+				"line_90_blue",
+				"line_0_green",
+				"#end_90_green"
+			],
+			"row4": [
+				"#wall",
+				"blank",
+				"#start",
+				"corner_0_green",
+				"line_90_blue",
+				"#wall"
+			],
+			"row5": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_5": {
+		"level_columns": 5,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#end_0_blue",
+				"#wall"
+			],
+			"row2": [
+				"#end_270_red",
+				"line_0_green",
+				"triple_90_green",
+				"triple_0_green",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"line_90_blue",
+				"#start",
+				"line_0_green",
+				"#wall"
+			],
+			"row4": [
+				"#end_270_red",
+				"corner_0_red",
+				"corner_270_red",
+				"triple_90_red",
+				"#end_90_green"
+			],
+			"row5": [
+				"#wall",
+				"corner_180_green",
+				"blank",
+				"corner_0_blue",
+				"#end_90_green"
+			],
+			"row6": [
+				"#wall",
+				"#end_180_green",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_6": {
+		"level_columns": 5,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"corner_90_green",
+				"corner_180_blue",
+				"block",
+				"#wall"
+			],
+			"row3": [
+				"#end_270_blue",
+				"line_90_blue",
+				"block",
+				"block",
+				"#wall"
+			],
+			"row4": [
+				"#wall",
+				"line_0_green",
+				"block",
+				"corner_270_blue",
+				"#wall"
+			],
+			"row5": [
+				"#wall",
+				"blank",
+				"corner_0_blue",
+				"line_90_omni",
+				"#start"
+			],
+			"row6": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_7": {
+		"level_columns": 6,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#end_270_green",
+				"line_0_blue",
+				"corner_180_omni",
+				"corner_90_green",
+				"triple_90_green",
+				"#end_90_red"
+			],
+			"row3": [
+				"#wall",
+				"triple_0_omni",
+				"block",
+				"block",
+				"line_0_omni",
+				"#end_90_green"
+			],
+			"row4": [
+				"#wall",
+				"blank",
+				"line_90_green",
+				"corner_270_green",
+				"block",
+				"#start"
+			],
+			"row5": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_8": {
+		"level_columns": 7,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#end_0_blue",
+				"#wall",
+				"#wall",
+				"#wall",
+				"#end_0_red",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"triple_0_omni",
+				"line_90_green",
+				"block",
+				"corner_0_red",
+				"line_0_blue",
+				"#wall"
+			],
+			"row3": [
+				"#end_270_red",
+				"line_0_red",
+				"corner_90_blue",
+				"block",
+				"triple_180_omni",
+				"block",
+				"#end_90_blue"
+			],
+			"row4": [
+				"#wall",
+				"blank",
+				"line_0_omni",
+				"triple_0_omni",
+				"corner_180_red",
+				"corner_270_blue",
+				"#wall"
+			],
+			"row5": [
+				"#wall",
+				"#wall",
+				"#wall",
+				"#start",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_9": {
+		"level_columns": 6,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#end_0_red",
+				"#wall",
+				"#wall",
+				"#end_0_red",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"triple_180_red",
+				"line_90_red",
+				"auto_90_red",
+				"triple_0_red",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"block",
+				"line_90_red",
+				"line_90_red",
+				"block",
+				"#wall"
+			],
+			"row4": [
+				"#wall",
+				"blank",
+				"auto_180_red",
+				"line_0_red",
+				"corner_0_red",
+				"#end_90_red"
+			],
+			"row5": [
+				"#wall",
+				"#wall",
+				"#start",
+				"#wall",
+				"#wall",
+				"#wall"
+			]
+		}
+	},
+	"level_10": {
+		"level_columns": 7,
+		"level_build": {
+			"row1": [
+				"#wall",
+				"#wall",
+				"#end_0_red",
+				"#wall",
+				"#end_0_red",
+				"#wall",
+				"#wall"
+			],
+			"row2": [
+				"#wall",
+				"blank",
+				"triple_0_omni",
+				"auto_0_red",
+				"triple_180_green",
+				"triple_180_blue",
+				"#wall"
+			],
+			"row3": [
+				"#wall",
+				"auto_270_red",
+				"triple_90_omni",
+				"auto_180_red",
+				"triple_270_omni",
+				"auto_0_red",
+				"#wall"
+			],
+			"row4": [
+				"#wall",
+				"#start",
+				"#end_180_blue",
+				"#wall",
+				"#end_180_green",
+				"#start",
+				"#wall"
+			]
+		}
+	}
+}

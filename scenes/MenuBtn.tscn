@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgu8rsvmmi4qd"]
+
+[ext_resource type="Texture2D" uid="uid://0oismckxpnxp" path="res://graphics/blue_gui_bubble.png" id="1_3pylq"]
+[ext_resource type="Script" path="res://scripts/MenuBtn.gd" id="1_6i10r"]
+[ext_resource type="AudioStream" uid="uid://cv0jlg6w1wye1" path="res://sound/minimal-pop-click-ui-1-198301.wav" id="2_83qnt"]
+[ext_resource type="FontFile" uid="uid://c372vpbk0fkub" path="res://Fonts/LTSaeada-Bold.otf" id="3_j7sqs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dhh7"]
+font = ExtResource("3_j7sqs")
+font_size = 18
+
+[node name="MenuBtn" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+flat = true
+script = ExtResource("1_6i10r")
+button_image = ExtResource("1_3pylq")
+
+[node name="BtnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_83qnt")
+volume_db = -12.0
+
+[node name="BtnTexture" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3pylq")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Margin" type="MarginContainer" parent="BtnTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 15
+
+[node name="BtnText" type="HBoxContainer" parent="BtnTexture/Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="BtnTexture/Margin/BtnText"]
+layout_mode = 2
+size_flags_horizontal = 3
+expand_mode = 2
+stretch_mode = 3
+
+[node name="BtnLabel" type="Label" parent="BtnTexture/Margin/BtnText"]
+layout_mode = 2
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_7dhh7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

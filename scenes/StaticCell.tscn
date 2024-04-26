@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgjgye0086ols"]
+
+[ext_resource type="Script" path="res://scripts/Cell.gd" id="1_qi68j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbqtb"]
+size = Vector2(50, 50)
+
+[node name="StaticCell" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchor_right = 0.05
+anchor_bottom = 0.067
+offset_bottom = -0.32
+mouse_filter = 2
+script = ExtResource("1_qi68j")
+
+[node name="PieceSprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DragArea" type="Area2D" parent="."]
+z_index = 1
+
+[node name="DragBox" type="CollisionShape2D" parent="DragArea"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_bbqtb")

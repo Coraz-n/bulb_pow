@@ -1,0 +1,274 @@
+[gd_scene load_steps=18 format=3 uid="uid://cucuu7tqtxk7f"]
+
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_vj4m8"]
+[ext_resource type="Texture2D" uid="uid://bhhb015n1xfya" path="res://graphics/purple_gui_box_64.png" id="2_6hsun"]
+[ext_resource type="FontFile" uid="uid://c372vpbk0fkub" path="res://Fonts/LTSaeada-Bold.otf" id="2_am110"]
+[ext_resource type="PackedScene" uid="uid://cgu8rsvmmi4qd" path="res://scenes/MenuBtn.tscn" id="3_ydlml"]
+[ext_resource type="Texture2D" uid="uid://dr56f0fi7xv8v" path="res://graphics/redoIcon.png" id="5_cvcw7"]
+[ext_resource type="Script" path="res://scripts/BoardContainer.gd" id="6_u1yhy"]
+[ext_resource type="Texture2D" uid="uid://byq1yduj36stw" path="res://graphics/Home.png" id="6_xu5nw"]
+[ext_resource type="Texture2D" uid="uid://hgpjb1uco4er" path="res://graphics/music_sign.png" id="7_5n480"]
+[ext_resource type="Texture2D" uid="uid://d1a3oka1pivba" path="res://graphics/blue_gui_box_64.png" id="7_th2r0"]
+[ext_resource type="Script" path="res://scripts/PopupPanel.gd" id="8_g0b4i"]
+[ext_resource type="Texture2D" uid="uid://bste7tdq37308" path="res://graphics/NextIcon.png" id="9_c5p0m"]
+[ext_resource type="AudioStream" uid="uid://chrp5pji5jgow" path="res://sound/ping-82822.mp3" id="11_68gnr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bgpbs"]
+font = ExtResource("2_am110")
+font_size = 40
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_btkfl"]
+font = ExtResource("2_am110")
+font_size = 32
+outline_color = Color(0.576471, 0.188235, 0.780392, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_10iv4"]
+texture = ExtResource("2_6hsun")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+modulate_color = Color(1, 1, 1, 0.858824)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5b5g8"]
+font = ExtResource("2_am110")
+font_size = 24
+outline_size = 4
+outline_color = Color(0.65098, 0.54902, 0.870588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u6ea"]
+font = ExtResource("2_am110")
+font_size = 14
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vj4m8")
+metadata/_edit_horizontal_guides_ = [184.0]
+
+[node name="GameContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="LevelGroup" type="MarginContainer" parent="GameContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="LevelNumber" type="Label" parent="GameContainer/LevelGroup"]
+layout_mode = 2
+text = "Level: "
+label_settings = SubResource("LabelSettings_bgpbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GameContainer/LevelGroup/LevelNumber"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -25
+
+[node name="LabelTexture" type="NinePatchRect" parent="GameContainer/LevelGroup/LevelNumber/MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_6hsun")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="ActionButtons" type="HBoxContainer" parent="GameContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="MenuButton" parent="GameContainer/ActionButtons" instance=ExtResource("3_ydlml")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+icon_image = ExtResource("6_xu5nw")
+
+[node name="MusicButton" parent="GameContainer/ActionButtons" instance=ExtResource("3_ydlml")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+icon_image = ExtResource("7_5n480")
+
+[node name="RestartLevel" parent="GameContainer/ActionButtons" instance=ExtResource("3_ydlml")]
+layout_mode = 2
+icon_image = ExtResource("5_cvcw7")
+
+[node name="NextLevel" parent="GameContainer/ActionButtons" instance=ExtResource("3_ydlml")]
+visible = false
+layout_mode = 2
+icon_image = ExtResource("9_c5p0m")
+
+[node name="MarginContainer2" type="MarginContainer" parent="GameContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 36
+
+[node name="Board" type="Control" parent="GameContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="GameContainer/Board"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -20
+theme_override_constants/margin_top = -20
+theme_override_constants/margin_right = -20
+theme_override_constants/margin_bottom = -20
+
+[node name="BoardTexture" type="NinePatchRect" parent="GameContainer/Board/MarginContainer"]
+modulate = Color(0.827451, 0.827451, 0.827451, 0.858824)
+layout_mode = 2
+texture = ExtResource("7_th2r0")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="BoardContainer" type="GridContainer" parent="GameContainer/Board/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 3
+script = ExtResource("6_u1yhy")
+
+[node name="MarginContainer3" type="MarginContainer" parent="GameContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="WinContainer" type="MarginContainer" parent="GameContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="LevelWin" type="Label" parent="GameContainer/WinContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "¡Well Done!"
+label_settings = SubResource("LabelSettings_btkfl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GameContainer/WinContainer/LevelWin"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/margin_left = -10
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_right = -10
+theme_override_constants/margin_bottom = -10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GameContainer/WinContainer/LevelWin/MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_6hsun")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_68gnr")
+volume_db = -10.0
+
+[node name="PopupPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 182.0
+offset_top = 182.0
+offset_right = 397.0
+offset_bottom = 350.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_10iv4")
+script = ExtResource("8_g0b4i")
+metadata/_edit_group_ = true
+
+[node name="Margin" type="MarginContainer" parent="PopupPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ReferenceRect" type="VBoxContainer" parent="PopupPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="PopupPanel/Margin/ReferenceRect"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "How to play!"
+label_settings = SubResource("LabelSettings_5b5g8")
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="PopupPanel/Margin/ReferenceRect"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Move the wires into empty spaces and connect the power sources with the bulbs."
+label_settings = SubResource("LabelSettings_1u6ea")
+autowrap_mode = 3
+
+[connection signal="pressed_continue" from="GameContainer/ActionButtons/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed_continue" from="GameContainer/ActionButtons/MusicButton" to="." method="_on_music_button_pressed_continue"]
+[connection signal="pressed_continue" from="GameContainer/ActionButtons/RestartLevel" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed_continue" from="GameContainer/ActionButtons/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="draw" from="GameContainer/Board" to="PopupPanel" method="_on_board_draw"]
+[connection signal="draw" from="GameContainer/Board/MarginContainer/BoardContainer" to="GameContainer/Board/MarginContainer/BoardContainer" method="_on_draw"]
